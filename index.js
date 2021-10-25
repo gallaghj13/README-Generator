@@ -14,14 +14,15 @@ const questions = [
         message: 'Give a description of the project:',
       },
       {
-        type: 'input',
+        type: 'checkbox',
         name: 'contents',
-        message: '',
+        message: 'Which sections will be included in this README?',
+        choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
       },
       {
         type: 'input',
         name: 'installation',
-        message: '',
+        message: 'Write a description of what the user will need to install in order to use your application:',
       },
       {
         type: 'input',
@@ -29,9 +30,10 @@ const questions = [
         message: '',
       },
       {
-        type: 'input',
+        type: 'checkbox',
         name: 'license',
-        message: '',
+        message: 'Would you like to add any of the following licenses?',
+        choices: ['MIT', ]
       },
       {
         type: 'input',
@@ -45,8 +47,13 @@ const questions = [
       },
       {
         type: 'input',
-        name: 'questions',
-        message: '',
+        name: 'github',
+        message: 'What is your github username?',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is an email address that you would like to associate with this project?',
       },
 ];
 
