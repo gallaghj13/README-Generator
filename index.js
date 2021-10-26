@@ -14,12 +14,6 @@ const questions = [
         message: 'Give a description of the project:',
       },
       {
-        type: 'checkbox',
-        name: 'contents',
-        message: 'Which sections will be included in this README?',
-        choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
-      },
-      {
         type: 'input',
         name: 'installation',
         message: 'Write a description of what the user will need to install in order to use your application:',
@@ -27,23 +21,23 @@ const questions = [
       {
         type: 'input',
         name: 'usage',
-        message: '',
+        message: 'Provide instructions on how to use the app:',
       },
       {
         type: 'checkbox',
         name: 'license',
         message: 'Would you like to add any of the following licenses?',
-        choices: ['MIT', ]
+        choices: ['MIT', 'Apache License 2.0', 'Mozilla Public License 2.0', 'GNU General Public License']
       },
       {
         type: 'input',
         name: 'contributing',
-        message: '',
+        message: 'What are the guidelines for other developers to contribute:',
       },
       {
         type: 'input',
         name: 'tests',
-        message: '',
+        message: 'Give test instructions:',
       },
       {
         type: 'input',
