@@ -13,13 +13,13 @@ function renderLicenseBadge(license){
         return "## License: " + "<br />" + "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     }
     if (license[0] === 'Apache License 2.0') {
-        console.log("Apache");
+        return "## License: " + "<br />" + "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     }
     if (license[0] === 'Mozilla Public License 2.0') {
-        console.log("Mozilla");
+        return "## License: " + "<br />" + "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
     }
     if (license[0] === 'GNU General Public License') {
-        console.log("GNU");
+        return "## License: " + "<br />" + "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
     }
 };
 
@@ -76,8 +76,8 @@ return `# ${title}
 
   ## Questions
 
-  Follow link for github: [Github Profile] (https://github.com/${github})
-  For any additional questions you can reach me at:
+  Follow link for github: [Github Profile] (https://github.com/${github}) <br />
+  For any additional questions you can reach me at: <br />
   Email: ${email}
 
 `;
