@@ -9,33 +9,37 @@ function renderLicenseBadge(license){
     if (license === []) {
         return '';
     }
-    if (license[0] === 'MIT') {
+    if (license === 'MIT') {
         return "## License: " + "<br />" + "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     }
-    if (license[0] === 'Apache License 2.0') {
+    if (license === 'Apache-2.0') {
         return "## License: " + "<br />" + "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     }
-    if (license[0] === 'Mozilla Public License 2.0') {
+    if (license === 'MPL-2.0') {
         return "## License: " + "<br />" + "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
     }
-    if (license[0] === 'GNU General Public License') {
+    if (license === 'GPL-3.0') {
         return "## License: " + "<br />" + "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
     }
 };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-    if (license === []) {
-        return '';
-    }
+const renderLicenseLink = license => {
+    // license = license.map(license => {
+        if(license !== 'None') {
+            return "* https://opensource.org/licenses/" + license
+        }
+    // })
+    return license.join(" \n");
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-    if (license === []) {
-        return '';
+    if (license !== 'None') {
+        return `## License 
+This Project is licensed under the ${license} license.`;
     }
 }
 
@@ -44,41 +48,44 @@ function renderLicenseSection(license) {
 function generateMarkdown({title, description, installation, usage, contributing, tests, github, email, license}) {
 return `# ${title}
 
-  ## Description
+## Description
 
-  ${description}
+${description}
 
-  ${renderLicenseBadge(license)}
+${renderLicenseBadge(license)}
 
-  ## Table of Contents
-  1. [Description](#description)
-  2. [Installation](#installation)
-  3. [Usage](#usage)
-  4. [Contributing](#contributing)
-  5. [Tests](#tests)
-  6. [Questions](#questions)
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [Tests](#tests)
+6. [Questions](#questions)
 
-  ## Installation
+## Installation
 
-  ${installation}
+${installation}
 
-  ## Usage
+## Usage
 
-  ${usage}
+${usage}
 
-  ## Contributing
+## Contributing
 
-  ${contributing}
+${contributing}
 
-  ## Tests
+${renderLicenseSection(license)}
 
-  ${tests}
+${renderLicenseLink(license)}
 
-  ## Questions
+## Tests
 
-  Follow link for github: [Github Profile] (https://github.com/${github}) <br />
-  For any additional questions you can reach me at: <br />
-  Email: ${email}
+${tests}
+
+## Questions
+
+Follow link for github: [Github Profile] (https://github.com/${github}) <br />
+For any additional questions you can reach me at: ${email}
 
 `;
 }
