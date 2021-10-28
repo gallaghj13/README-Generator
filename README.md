@@ -29,6 +29,7 @@ In order for this application to work you will need the node environment install
 4. Once all of the questions have been answered the console should say "Successfully created README file"
 5. In this application the README will be generated with the name SAMPLEREADME
 
+A walkthrough video can be seen via this link: https://watch.screencastify.com/v/FTwfHoZe1exKGmK9KixX
 
 ## Credits
 
